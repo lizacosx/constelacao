@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sua Constelação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/images/planeta.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ TELA DE INTRODUÇÃO (buraco negro) ============ -->
+<div id="introScreen">
+  <canvas id="bhCanvas"></canvas>
+  <canvas id="bhFgCanvas"></canvas>
+  <button id="introMusicToggle" class="simple-music-btn" type="button" aria-label="Tocar música">
+    <span class="icon">&#9834;</span>
+  </button>
+  <div class="intro-content">
+    <div class="intro-title">Seu universo</div>
+    <div class="intro-subtitle">antes de tudo, atravesse o horizonte</div>
+    <div class="intro-cta">
+      <span class="hint">toque para entrar na sua constelação</span>
+      <button id="enterBtn" type="button">Atravessar o Horizonte</button>
+    </div>
+  </div>
+</div>
+<audio id="introMusic" loop preload="none">
+  <source src="assets/audio/InterstellarMusica.mp3" type="audio/mpeg">
+</audio>
+
+<div id="mainContent">
+  <div id="sky"></div>
+
+  <button id="musicToggle" class="simple-music-btn" type="button" aria-label="Tocar música ambiente">
+    <span class="icon">&#9834;</span>
+  </button>
+  <button id="backToVoidBtn" type="button" aria-label="Voltar para a tela do buraco negro">
+    <span class="icon">◐</span>
+    <span class="txt">horizonte</span>
+  </button>
+  <audio id="bgMusic" loop preload="none">
+    <source src="assets/audio/InterstellarMusica.mp3" type="audio/mpeg">
+  </audio>
+
+  <header>
+    <h1 id="mainTitle">Sua Constelação</h1>
+    <p id="subTitle">toque nas estrelas, na ordem, para reviver cada momento</p>
+  </header>
+
+  <div id="stage">
+    <svg id="lines"></svg>
+  </div>
+
+  <div id="hint">estrela 1 de 9 — toque para começar ✨</div>
+</div>
+
+<div id="overlay">
+  <div class="card" id="card">
+    <div class="photo-frame" id="photoFrame">
+      <img class="photo" id="cardPhoto" alt="">
+      <div class="photo-placeholder" id="photoPlaceholder">
+        <span class="cam">📷</span>
+        <span>coloque a foto aqui</span>
+      </div>
+    </div>
+    <div class="date" id="cardDate"></div>
+    <h2 id="cardTitle"></h2>
+    <p id="cardText"></p>
+    <button id="cardClose" type="button">fechar</button>
+  </div>
+</div>
+
+<div id="finale">
+  <div class="msg">
+    <div class="heart">♥</div>
+    <h2 id="finaleTitle">Feliz Aniversário</h2>
+    <p id="finaleText"></p>
+
+    <button id="voiceMsgBtn" class="voice-msg-btn" type="button" aria-label="Ouvir mensagem de voz">
+      <span class="voice-icon">🎙️</span>
+      <span class="voice-txt">ouvir uma mensagem minha</span>
+    </button>
+    <audio id="voiceMsg" preload="none">
+      <source src="assets/audio/mensagem-de-voz.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="finaleClose" type="button">reviver de novo</button>
+  </div>
+</div>
+
+<script src="js/blackhole.js"></script>
+<script src="js/musicwidget.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
